@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+    <title>Welcome To Maldy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+      #response-container {
+        display: none;
+        padding: 3rem;
+        margin: 3rem 5rem;
+        font-size: 120%;
+        border: 5px dashed #ccc;
+    }
+    </style>
+</head>
+<body>
+<section id="nav-bar">
+        <!-- Just an image -->
+<nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img src="images/antivirus-vector.svg" width="40" height="40" class="d-inline-block align-top" alt="">
+         Maldy 
+        </a>
+        <button type="button" class="btn btn-outline-success" onclick="location.href='frontpage.html'">Back</button>
+      </nav>
+</section>
+
+
+<div class="jumbotron">
+  <h1 class="display-4">Maldy</h1>
+  <p class="lead">The static analysis of the PE header files by using pefiles can be done here. </p>
+  <h3>
+    Fancy display heading
+    <small class="text-muted" id="static-status">Static analysis is ready</small>
+  </h3>
+  <hr class="my-4">
+  <p>The modules used in the analysis of the PE header files are given </p>
+  <ul>
+      <li>pefile</li>
+      <li>Scikit learn</li>
+      <li>Pickle</li>
+      <li>Joblib</li>
+  </ul>
+
+  <h2 class="display-5">Please enter the information below to begin the analysis</h2><br>
+  
+  <div class="form-group">
+    <label for="Username"> <h4>Path To CSV</h4></label>
+    <input type="text" class="form-control" id="path-to-file" >
+    <small id="emailHelp" class="form-text text-muted">Please enter the path of anaylsed exe file above.</small>
+  </div>
+  <label for="retrain-model"> <h4>Retrain model</h4> </label>
+  
+  <div class="form-check" class="form-group">
+    
+    <input class="form-check-input position-static" type="checkbox" value="True" aria-label="..." id="retrain-model">
+    <label class="form-check-label" for="defaultCheck1">Retrain model</label>
+    <small id="emailHelp" class="form-text text-muted">If you want to retrain the already existing model press the button.</small>
+  </div> <br>
+  <button class="btn btn-primary" onClick="start_analysis_static()" id="static-btn">Start</button>
+  <p id='input-text'></p>
+
+</div>
+<div id="response-container"></div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="static.js"></script>
+</body>
+</html>
