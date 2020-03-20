@@ -44,6 +44,15 @@ class Analyse:
             return{'message' : 'The analysed file is potentialy Malacious'}
         elif self.prediction==1:
             return{'message' : 'The analysed file is potentialy Benign'}
+
+
+    def execute_exe(self, path_to_exe):
+        os.system('python2 peextractor.py {}'.format(path_to_exe))
+        self.result = self.analyse('MalwareData.csv')
+        #return {'message':'extraction complete'}
+        return self.result
+
+
 if __name__=='__main__':
     path_to_csv = 'C:\\Users\\zeeshan lone\\Desktop\\datasets\\test-static.csv'
     ana = Analyse()
